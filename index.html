@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .container{
+            width: 600px;
+            height: 600px;
+            display: flex;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        .container .inner{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url("media/BG.webp");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            animation-name: pulseBg;
+            animation-duration: 4s;
+            position: relative;
+            animation-timing-function: ease-in-out;
+        }
+        .makeMeBlend{
+            height: 700px;
+            position: absolute;
+            mix-blend-mode: overlay;
+            width: 500px;
+            transform: rotate(7deg);
+            animation-name: blurMeOut;
+            animation-duration: 6s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes blurMeOut {
+            0%{
+                left: -500px;
+            }
+            100%{
+                left: 600px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="inner">
+        <img class="makeMeBlend" src="media/lightbar.png" alt="background"/>
+    </div>
+</div>
+</body>
+</html>
